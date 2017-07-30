@@ -50,6 +50,7 @@ class Sub_kategori_menu extends CI_Controller
 
     function addeditsub_kategori_menu()
     {
+        //
         $id_sub_kategori_menu = $this->input->post('id_sub_kategori_menu');
         $id_kategori_menu = $this->input->post('id_kategori_menu');
         $nama_sub_kategori_menu = $this->input->post('nama_sub_kategori_menu');
