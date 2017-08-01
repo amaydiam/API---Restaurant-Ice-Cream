@@ -2,15 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * @property Absensi_meja_model $Absensi_meja_model
+ * @property Absensi_pegawai_model $Absensi_pegawai_model
  */
-class Absensi_meja extends CI_Controller
+class Absensi_pegawai extends CI_Controller
 {
     function __construct()
     {
         parent::__construct();
 
-        $this->load->model('Absensi_meja_model', '', TRUE);
+        $this->load->model('Absensi_pegawai_model', '', TRUE);
 
     }
 
@@ -23,18 +23,18 @@ class Absensi_meja extends CI_Controller
 
     function absen()
     {
-        $id_meja = $this->input->post('id_meja');
+        $tipe_pegawai = $this->input->post('tipe_pegawai');
         $id_one_signal = $this->input->post('id_one_signal');
 
         $response['isSuccess'] = false;
         $response['message'] = "Absensi gagal";
 
         $absen = array(
-            'id_meja' => $id_meja,
+            'tipe_pegawai' => $tipe_pegawai,
             'id_one_signal' => $id_one_signal
         );
 
-        $nb = $this->Absensi_meja_model->insertabsensi_meja($absen);
+        $nb = $this->Absensi_pegawai_model->insertabsensi_pegawai($absen);
 
         if ($nb) {
             $response['isSuccess'] = true;

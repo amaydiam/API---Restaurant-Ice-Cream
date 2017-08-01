@@ -30,6 +30,8 @@ class Meja_model extends CI_Model
     }
 
 
+
+
     public function cek_nama_meja($nama_meja)
     {
         $this->db
